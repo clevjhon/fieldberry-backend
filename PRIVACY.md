@@ -1,0 +1,1 @@
+Privacy: API Sietehr Foundation does not store code. It processes PR diffs in memory via fieldberry-backend.onrender.com and returns audit results. No cookies, no tracking. Plan 14948 only uses GitHub Marketplace purchase ID for provisioning.
