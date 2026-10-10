@@ -1,2 +1,36 @@
-node_modules
+# Node / build
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Env — NEVER commit
 .env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets*.json
+
+# Keep example
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IMPORTANT: Allow exe for marketplace v14-exe-133 plan 14948
+# Old file had "*.exe" — this fixes it:
+!*.exe
+!releases/*.exe
+
+# But ignore other binaries
+*.dll
+*.so
+*.dylib
