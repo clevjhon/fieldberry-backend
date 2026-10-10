@@ -1,26 +1,20 @@
-	mport express from 'express';
+import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { BOM_ROOTS, getBomRoot } from './bom.js';
-
 const app = express();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
-
-// BY LAW - DNS secure cookie for gmx.ch
-app.use((req, res, next) => {
-  res.cookie('dns_secure', '1', { httpOnly: true, secure: true, sameSite: 'strict' });
+app.use((req,res,next)=>{
+  res.cookie('dns_secure','1',{httpOnly:true,secure:true,sameSite:'Strict',path:'/'});
   next();
 });
-
-app.get('/api/health', (req,res)=> res.json({ok:true, time: new Date().toISOString()}));
-app.get('/api/bom', (req,res)=> res.json(BOM_ROOTS));
-app.get('/api/bom/:key', (req,res)=> {
-  const bom = getBomRoot(req.params.key);
-  if(!bom) return res.status(404).json({error:'BOM root not found'});
-  res.json(bom);
+app.get('/api/health',(req,res)=>res.json({ok:true}));
+app.get('/api/bom',(req,res)=>res.json(BOM_ROOTS));
+app.get('/api/bom/:key',(req,res)=>{
+  const b=getBomRoot(req.params.key);
+  if(!b) return res.status(404).json({error:'not found'});
+  res.json(b);
 });
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', ()=> console.log(`fieldberry-backend running on ${PORT}`));
+app.listen(process.env.PORT||3000,'0.0.0.0',()=>console.log('running'));
