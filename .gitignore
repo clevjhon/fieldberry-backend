@@ -1,11 +1,3 @@
-node_modules/
-dist/
-build/
-.env
-*.pem
-*.key
-*.log
-.DS_Store
-# Allow exe for marketplace
-!*.exe
-!releases/*.exe
+releases/
+*.exe
+autoexec

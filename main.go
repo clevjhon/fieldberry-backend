@@ -32,3 +32,7 @@ func main(){
  log.Printf("Go host 14948 on :%s",port)
  log.Fatal(http.ListenAndServe(":"+port,mux))
 }
+
+func init(){
+  // white live handler
+}
