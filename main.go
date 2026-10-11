@@ -9,6 +9,8 @@ import (
  "time"
 )
 func main(){
+ _=godotenv.Load()
+
  mux:=http.NewServeMux()
  mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
   w.Header().Set("Content-Type","application/json")
