@@ -31,7 +31,7 @@ func main(){
   json.NewEncoder(w).Encode(map[string]any{"ok":true,"plan":14948})
  })
  mux.Handle("/releases/", http.StripPrefix("/releases/", http.FileServer(http.Dir("releases"))))
- port:=os.Getenv("PORT"); if port==""{port="8080"}
+ port:=os.Getenv("PORT"); if port==""{port="8082"}
  log.Printf("Go host 14948 on :%s",port)
  log.Fatal(http.ListenAndServe(":"+port,mux))
 }
