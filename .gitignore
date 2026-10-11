@@ -2,3 +2,4 @@ releases/
 *.exe
 autoexec
 .env
+.env
