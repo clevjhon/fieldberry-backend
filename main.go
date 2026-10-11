@@ -1,5 +1,6 @@
 package main
 import (
+  "github.com/joho/godotenv"
  "encoding/json"
  "fmt"
  "log"
